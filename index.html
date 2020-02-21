@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AR Book</title>
+  </head>
+  <script src="./src/index.js"></script>
+  <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+    <a-scene
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+    >
+      <a-assets>
+        <!-- <a-asset-item
+          id="animated-asset"
+          src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"
+        ></a-asset-item> -->
+      </a-assets>
+
+      <!-- <a-box position="1 0.5 3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+
+      <!-- <a-marker type="hiro">
+        <a-box position="0 0.5 0" color="yellow"></a-box>
+      </a-marker> -->
+
+      <a-marker id="animated-marker" type="hiro">
+        <a-entity
+          obj-model="obj: url(/assets/TAGA_AR.obj); 
+mtl: url(/assets/TAGA_AR.mtl)"
+        >
+        </a-entity>
+      </a-marker>
+
+      <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
