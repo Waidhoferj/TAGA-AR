@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AR Book</title>
   </head>
-  <script src="./src/index.js"></script>
+
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
   <body style="margin : 0px; overflow: hidden;">
@@ -28,11 +28,20 @@
         <a-box position="0 0.5 0" color="yellow"></a-box>
       </a-marker> -->
 
-      <a-marker id="animated-marker" type="hiro">
+      <a-marker type="hiro">
         <a-entity
-          obj-model="obj: url(/assets/TAGA_AR.obj); 
-mtl: url(/assets/TAGA_AR.mtl)"
+          material="src: url(/assets/topographic-material.png)"
+          id="year"
+          background="color: red"
+          rotation="-90 0 0"
+          scale="1 1 0"
+          position="2.5 0 6"
+          animation__bevel="property: scale; dur: 3000; to: 1 1 0.3; fill:forwards; "
+          animation__position="property: position; dur: 3000; to: 2.5 1 6; fill:forwards;"
+          obj-model="obj: url(/assets/TAGA_AR.obj)"
         >
+          <!-- <a-animation
+          attribute="scale" duration="3000" to=""> </a-animation> -->
         </a-entity>
       </a-marker>
 
@@ -40,4 +49,5 @@ mtl: url(/assets/TAGA_AR.mtl)"
       <a-entity camera></a-entity>
     </a-scene>
   </body>
+  <script src="./src/index.js"></script>
 </html>
