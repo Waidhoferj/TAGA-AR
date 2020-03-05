@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.html --public-url ./"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "parcel-bundler": "^1.12.4",
     "sass": "^1.25.0"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.4",
     "parcel-plugin-static-files-copy": "^2.3.1"
   }
 }

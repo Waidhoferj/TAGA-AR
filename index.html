@@ -13,11 +13,11 @@
     <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
     <a-scene
       embedded
-      arjs="sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
-      <a-marker type="hiro">
+      <a-marker type="hiro" smooth="true">
         <a-entity
-          material="src: url(/assets/year-material.png); color: #FFFFFF; metalness: 0.2;"
+          material="src: url(/assets/year-material.png); color: #FFFFFF; metalness: 0.5; roughness: 0.7;"
           id="year"
           rotation="-90 0 0"
           scale="1 1 0"
@@ -26,7 +26,7 @@
           property: object3D.scale.z; 
           dur: 3000; 
           from: 0; 
-          to: 0.3; 
+          to: 0.15; 
           startEvents: anim-start; 
           autoplay: true; "
           animation__position="
