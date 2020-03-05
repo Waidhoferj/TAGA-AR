@@ -9,36 +9,40 @@
 
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
-  <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
     <a-scene
       embedded
       arjs="sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
-      <a-assets>
-        <!-- <a-asset-item
-          id="animated-asset"
-          src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"
-        ></a-asset-item> -->
-      </a-assets>
-
-      <!-- <a-box position="1 0.5 3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-
-      <!-- <a-marker type="hiro">
-        <a-box position="0 0.5 0" color="yellow"></a-box>
-      </a-marker> -->
-
       <a-marker type="hiro">
         <a-entity
-          material="src: url(/assets/topographic-material.png)"
+          material="src: url(/assets/year-material.png); color: #FFFFFF; metalness: 0.2;"
           id="year"
-          background="color: red"
           rotation="-90 0 0"
           scale="1 1 0"
-          position="2.5 0 6"
-          animation__bevel="property: scale; dur: 3000; to: 1 1 0.3; startEvents: anim-start; resumeEvents: anim-start; restartEvents: anim-restart; dir: alternate;"
-          animation__position="property: position; dur: 3000; to: 2.5 1 6; startEvents: anim-start; resumeEvents: anim-start; restartEvents: anim-restart; dir: alternate;"
+          position="2.9 0 7"
+          animation__bevel="
+          property: object3D.scale.z; 
+          dur: 3000; 
+          from: 0; 
+          to: 0.3; 
+          startEvents: anim-start; 
+          autoplay: true; "
+          animation__position="
+          property: object3D.position.y;
+           dur: 3000;
+           from: 0;
+           to: 1;
+           startEvents: anim-start;
+           autoplay: true;"
+          animation__opacity="
+          property: material.opacity;
+           dur: 2000;
+           from: 0.0;
+           to: 1.0;
+           startEvents: anim-start;
+           autoplay: true;"
           obj-model="obj: url(/assets/TAGA_AR.obj)"
         >
           <!-- <a-animation

@@ -4,7 +4,6 @@ let year = document.getElementById("year");
 let marker = document.querySelector("a-marker");
 
 marker.addEventListener("markerFound", function() {
-  year.emit("anim-restart");
   year.emit("anim-start");
 });
 
