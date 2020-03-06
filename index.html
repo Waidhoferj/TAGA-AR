@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>AR Book</title>
+    <title>AR TAGA Book</title>
   </head>
 
   <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
@@ -15,7 +15,7 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
     >
-      <a-marker type="hiro">
+      <a-marker type="hiro" smooth="true">
         <a-entity
           material="src: url(/assets/year-material.png); color: #FFFFFF; metalness: 0.5; roughness: 0.7;"
           id="year"
@@ -38,15 +38,13 @@
            autoplay: true;"
           animation__opacity="
           property: material.opacity;
-           dur: 2000;
+           dur: 1000;
            from: 0.0;
            to: 1.0;
            startEvents: anim-start;
            autoplay: true;"
           obj-model="obj: url(/assets/TAGA_AR.obj)"
         >
-          <!-- <a-animation
-          attribute="scale" duration="3000" to=""> </a-animation> -->
         </a-entity>
       </a-marker>
 
